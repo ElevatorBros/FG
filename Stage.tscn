@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://turniug2tfr"]
+
+[ext_resource type="Script" path="res://Character.gd" id="1_481y1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt615"]
+size = Vector2(82, 644)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xpmq"]
+size = Vector2(993.5, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cp7lw"]
+size = Vector2(99, 187)
+
+[node name="Main" type="Node2D"]
+
+[node name="Left Wall" type="RigidBody2D" parent="."]
+freeze = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall"]
+position = Vector2(41, 323)
+shape = SubResource("RectangleShape2D_bt615")
+
+[node name="ColorRect" type="ColorRect" parent="Left Wall/CollisionShape2D"]
+offset_left = -41.0
+offset_top = -323.0
+offset_right = 40.0
+offset_bottom = 322.0
+
+[node name="Right Wall" type="RigidBody2D" parent="."]
+position = Vector2(1072, 1)
+freeze = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall"]
+position = Vector2(41, 323)
+shape = SubResource("RectangleShape2D_bt615")
+
+[node name="ColorRect" type="ColorRect" parent="Right Wall/CollisionShape2D"]
+offset_left = -41.0
+offset_top = -323.0
+offset_right = 40.0
+offset_bottom = 322.0
+
+[node name="Floor" type="RigidBody2D" parent="."]
+position = Vector2(560, 612)
+freeze = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(20, -9)
+shape = SubResource("RectangleShape2D_7xpmq")
+
+[node name="ColorRect" type="ColorRect" parent="Floor/CollisionShape2D"]
+offset_left = -496.75
+offset_top = -41.0
+offset_right = 495.25
+offset_bottom = 41.0
+
+[node name="Ceiling" type="RigidBody2D" parent="."]
+position = Vector2(558, 52)
+freeze = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+position = Vector2(20, -9)
+shape = SubResource("RectangleShape2D_7xpmq")
+
+[node name="ColorRect" type="ColorRect" parent="Ceiling/CollisionShape2D"]
+offset_left = -496.75
+offset_top = -41.0
+offset_right = 495.25
+offset_bottom = 41.0
+
+[node name="Character" type="CharacterBody2D" parent="."]
+position = Vector2(305, 401)
+script = ExtResource("1_481y1")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+position = Vector2(-7, -1)
+shape = SubResource("RectangleShape2D_cp7lw")
+
+[node name="ColorRect" type="ColorRect" parent="Character"]
+offset_left = -56.0
+offset_top = -96.0
+offset_right = 45.0
+offset_bottom = 94.0
+color = Color(1, 0, 0, 1)
